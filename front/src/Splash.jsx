@@ -3,12 +3,6 @@ import line from "./images/SplashTitleLine.png";
 import circles from "./images/SplashCircles.png";
 
 function Splash() {
-  /*<div className="splashellipse1"></div>
-      <div className="splashellipse2"></div>
-      <div className="splashellipse3"></div>
-      <div className="splashellipse4"></div>
-      <div className="splashellipse5"></div>
-      <div className="splashellipse6"></div>*/
   const [showElement, setShowElement] = useState(true);
   const splashContainer = useRef();
   const handleButtonClick = () => {
