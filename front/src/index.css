@@ -13,6 +13,7 @@
   --main-color: #c28aff;
   --secondary-color: #ffffff;
   --background-color: #1d1d1d;
+  --header-height: 80px;
   background-color: var(--background-color);
   color: var(--secondary-color);
 }
@@ -309,6 +310,126 @@ body {
   border: 5px solid rgba(0, 0, 0, 0.27);
 }
 */
+
+/*HEADER.JSX*/
+.headercontainer {
+  width: 100%;
+  background: #121212;
+  height: var(--header-height);
+  border-bottom: 2px solid #eeeeee;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.header {
+  position: sticky;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: calc(var(--header-height) / 2);
+  user-select: none;
+  width: 100%;
+  height: var(--header-height);
+  top: 0px;
+}
+.headerleft,
+.headerright {
+  display: flex;
+  flex-direction: row;
+}
+.header h1 {
+  position: relative;
+}
+.headerline {
+  height: calc(var(--header-height) * 0.9);
+  width: 100%;
+  position: absolute;
+  top: 5px;
+}
+.headerlog {
+  color: var(--main-color);
+}
+.headerword {
+  margin: 1rem;
+}
+
+.dropdown {
+  position: relative;
+}
+.dropdown-menu {
+  position: absolute;
+  left: 0;
+  top: 85%;
+  background-color: #323232;
+  padding: 0.75rem;
+  padding-right: 2.1rem;
+  border-radius: 1.1rem;
+  box-shadow: 0 2px 2px 0 rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition:
+    opacity 150ms ease-in-out,
+    transform 150ms ease-in-out;
+}
+
+.dropdown-menu p {
+  padding: 0.3rem;
+  margin: 0;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.blogdropdivider {
+  height: 1px;
+  background: #ffffff;
+  width: calc(100% + 1.1rem);
+}
+
+.dropitem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.dropitem > img {
+  height: 22px;
+  padding-right: 3px;
+  padding-left: 3px;
+  width: auto;
+}
+
+.dropdownlink {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  height: calc(var(--header-height) / 2);
+  cursor: pointer;
+  outline: inherit;
+  font: inherit;
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.dropdown > .dropdownlink:focus,
+.dropdownlink:hover {
+  font-weight: 900;
+}
+
+.dropdown > .dropdownlink:focus + .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+#links {
+  justify-self: flex-end;
+}
 @media (max-width: 1536px) {
   .container {
     max-width: 1280px;
